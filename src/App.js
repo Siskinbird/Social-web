@@ -1,23 +1,16 @@
 import './App.css';
-/* import Header from './Header';
-import Stack from './Stack'; */
+import Header from './components/Header';
+import Navigation from './components/Navigation';
+import Main from './components/Main'
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className='header'>
-        <img src='../src/logo.svg'/>
-      </header>
-      <nav className='nav'>
-        <ul>
-          <li><a href='#'>Profile</a></li>
-          <li><a href='#'>Blog</a></li>
-          <li><a href='#'>Portfolio</a></li>
-          <li><a href='#'>Contacts</a></li>
-        </ul>
-      </nav>
-      <main className='content'>This is content block</main>
-      <footer className='footer'></footer>
+      <Header/>
+      <Navigation/>
+      <Main/>
+      <Footer/>
     </div>
   );
 }

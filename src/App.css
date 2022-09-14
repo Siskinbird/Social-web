@@ -3,10 +3,13 @@ ul li {
 }
 
 .App {
+  margin: 0 auto;
   min-height: 100vh;
   display: grid;
+  max-width: 1200px;
   grid-template-areas: "header header"
-  "nav content";
+  "nav content"
+  "footer footer";
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   gap: 10px;
@@ -14,17 +17,29 @@ ul li {
 
 .header {
   grid-area: header;
-  background-color: aqua;
+  background-color: #F16C97;
+}
+.header .img {
+  width: 60px;
+  height: 60px;
+  background: url('/src/logo.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .nav {
   grid-area: nav;
-  background-color: blueviolet;
+  background-color: #38b2ce;
 }
 
 .content {
   grid-area: content;
-  background-color: blue;
+  background-color: #60b9ce;
+}
+.footer {
+  grid-area: footer;
+  height: 60px;
+  background-color: #9F3ED5;
 }
 /* .App {
   background-color: #282c34;
