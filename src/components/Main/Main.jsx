@@ -1,12 +1,13 @@
 import React from "react";
+import style from './Main.module.css'
 
 function Main() {
     return (
-        <main className='content'>
-            <div className="head-img"></div>
-            <div className="author__body">
-                <img className="author__body-avatar" alt="Avatar" />
-                <div className="author__body-description">
+        <main className={style.content}>
+            <div className={style.head__img}></div>
+            <div className={style.author__body}>
+                <div className={style.author__avatar}/>
+                <div className={style.author__description}>
                     <h2>Dmitry Chizhov</h2>
                     <p>Date of burn: 12.10.1986</p>
                     <p>City: Moscow</p>

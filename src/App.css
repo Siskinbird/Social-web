@@ -1,12 +1,9 @@
-ul li {
-  list-style: none;
-}
-
 .App {
   margin: 0 auto;
   min-height: 100vh;
   display: grid;
   max-width: 1200px;
+  font-size: calc(10px + 2vmin);
   grid-template-areas: "header header"
   "nav content"
   "footer footer";
@@ -14,52 +11,6 @@ ul li {
   grid-template-columns: 2fr 10fr;
   gap: 10px;
 }
-
-.header {
-  grid-area: header;
-  background-color: #F16C97;
-}
-.header .img {
-  width: 60px;
-  height: 60px;
-  background: url('/src/logo.svg');
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
-
-.head-img {
-  width: 100%;
-  height: 400px;
-  background: url('https://xakep.ru/wp-content/uploads/2017/01/old-pc-window-h.jpg');
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
-.nav {
-  grid-area: nav;
-  background-color: #38b2ce;
-}
-
-.content {
-  grid-area: content;
-  background-color: #60b9ce;
-}
-.footer {
-  grid-area: footer;
-  height: 60px;
-  background-color: #9F3ED5;
-}
-/* .App {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
 
 .App-link {
   color: #61dafb;

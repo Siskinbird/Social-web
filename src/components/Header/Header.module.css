@@ -1,0 +1,11 @@
+.header {
+    grid-area: header;
+    background-color: #F16C97;
+  }
+  .header .img {
+    width: 60px;
+    height: 60px;
+    background: url('/src/logo.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
