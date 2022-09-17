@@ -9,7 +9,7 @@
   
 .content {
     grid-area: content;
-    background-color: #60b9ce;
+    background-color: #161A1e;
 }
 
 .author__body {
@@ -31,9 +31,15 @@
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
-/* .author__description {
-    margin: 0 auto;
-} */
+.author__description {
+   color: #B7BDC6;
+}
+.author__description a {
+    text-decoration: none;
+    color: #B7BDC6;
+    font-weight: 500;
+}
+
 
 .author__body p {
     margin: 0;
