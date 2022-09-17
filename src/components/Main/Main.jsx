@@ -1,4 +1,5 @@
 import React from "react";
+import MyPosts from './MyPosts/MyPosts'
 import style from './Main.module.css'
 
 function Main() {
@@ -15,6 +16,7 @@ function Main() {
                     <p>Web Site: <a href="https://dmich.ru">dmich.ru</a></p>
                 </div>
             </div>
+            <MyPosts />
         </main>
     )
 }

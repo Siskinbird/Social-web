@@ -2,8 +2,8 @@
     grid-area: footer;
     height: 60px;
     background-color: #181A20;
-    align-items: center;
 }
+
 .copyright p {
     text-align: center;
 }
