@@ -5,10 +5,10 @@ function Navigation() {
     return(
     <nav className={style.nav}>
         <ul>
-          <li><a href='#'>Profile</a></li>
-          <li><a href='#'>Blog</a></li>
-          <li><a href='#'>Portfolio</a></li>
-          <li><a href='#'>Contacts</a></li>
+          <li><a href='/profile'>Profile</a></li>
+          <li><a href='/blog'>Blog</a></li>
+          <li><a href='/portfolio'>Portfolio</a></li>
+          <li><a href='/contacts'>Contacts</a></li>
         </ul>
     </nav>
     )

@@ -2,12 +2,15 @@ import React from "react";
 import style from "./Post.module.css";
 
 
-function Post() {
+function Post(props) {
     return(
         <section className="post">
             <div className={style.item}>
-                <img src="https://avatarzo.ru/wp-content/uploads/squid-game-anime.jpg"/>
-                Post 1
+                <img src="https://www.youloveit.ru/uploads/posts/2020-04/1586360515_youloveit_ru_dipper_gravity_falls_na_avu02.jpg"/>
+                {props.message}
+            </div>
+            <div>
+                <span>Like</span>
             </div>
         </section>
     )

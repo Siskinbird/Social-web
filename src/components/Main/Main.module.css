@@ -7,11 +7,6 @@
     background-size: 100% 100%;
 }
   
-.content {
-    grid-area: content;
-    background-color: #161A1e;
-}
-
 .author__body {
     padding: 10px;
     display: flex;

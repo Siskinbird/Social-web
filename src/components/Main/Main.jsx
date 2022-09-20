@@ -4,7 +4,7 @@ import style from './Main.module.css'
 
 function Main() {
     return (
-        <main className={style.content}>
+        <main>
             <div className={style.head__img}></div>
             <div className={style.author__body}>
                 <div className={style.author__avatar}/>

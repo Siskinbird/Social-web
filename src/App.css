@@ -17,3 +17,7 @@
   color: #61dafb;
 }
 
+.content {
+  grid-area: content;
+  background-color: #161A1e;
+}

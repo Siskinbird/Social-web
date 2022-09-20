@@ -14,9 +14,9 @@ function MyPosts() {
                     <button>Remove</button>
                 </div>
                 <div className={style.posts}>
-                    <Post/>
-                    <Post/>
-                    <Post/>
+                    <Post message="Hellow its my first post"/>
+                    <Post message="Hellow its my SECOND post"/>
+                    <Post message="Hello WOrld im live"/>
                     <Post/>
                 </div>
             </div>
