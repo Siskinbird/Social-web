@@ -15,8 +15,8 @@ function App(props) {
       <Navigation/>
       <div className='content'>
         <Routes>
-          <Route path='/main' element={<Main posts={props.posts}/>} /> 
-          <Route path='/dialogs' element={<Dialogs dialogs={props.dialogs} messages={props.messages}/>} />
+          <Route path='/main' element={<Main state={props.state.mainPage}/>} /> 
+          <Route path='/dialogs' element={<Dialogs state={props.state.dialogsPage} messages={props.state.dialogsPage.messages}/>} />
         </Routes>
       </div>
       <Footer/>
