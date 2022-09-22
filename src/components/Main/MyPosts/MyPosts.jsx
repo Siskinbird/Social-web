@@ -14,6 +14,8 @@ function MyPosts() {
         {id: 6, message: 'Away', likesCount: 113} 
     ];
 
+    let postsMessages = postsData.map(post => (<Post message={post.message} likesCount={post.likesCount}/>))
+
     return(
         <section className="posts">
             <div>
@@ -24,12 +26,7 @@ function MyPosts() {
                     <button>Remove</button>
                 </div>
                 <div className={style.posts}>
-                    <Post message={postsData[0].message} likesCount={postsData[0].likesCount}/>
-                    <Post message={postsData[1].message} likesCount={postsData[1].likesCount}/>
-                    <Post message={postsData[2].message} likesCount={postsData[2].likesCount}/>
-                    <Post message={postsData[3].message} likesCount={postsData[3].likesCount}/>
-                    <Post message={postsData[4].message} likesCount={postsData[4].likesCount}/>
-                    <Post message={postsData[5].message} likesCount={postsData[5].likesCount}/>
+                    { postsMessages }
                 </div>
             </div>
         </section>
