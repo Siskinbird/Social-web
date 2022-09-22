@@ -8,7 +8,7 @@ function MyPosts() {
         <section className="posts">
             <div>
                 My posts
-                <div>
+                <div className={style.posts_area}>
                     <textarea></textarea>
                     <button>New post</button>
                     <button>Remove</button>

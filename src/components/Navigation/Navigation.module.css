@@ -7,4 +7,17 @@
     text-decoration: none;
     color: #B7BDC6;
     font-weight: 500;
+    transition: all ease-in-out .4s;
+    -webkit-transition: all ease-in-out .4s;
+    -moz-transition: all ease-in-out .4s;
+    -ms-transition: all ease-in-out .4s;
+    -o-transition: all ease-in-out .4s;
+}
+
+
+a.active{
+    color: gold;
+}
+a:hover {
+    color: gold;
 }

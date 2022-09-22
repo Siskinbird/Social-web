@@ -2,7 +2,25 @@
     font-size: 16px;
     padding: 8px;
 }
+.posts_area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 8px;
+}
 
+textarea {
+    margin-bottom: 10px;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
 /* .item {
     padding: 10px;
     display: flex;

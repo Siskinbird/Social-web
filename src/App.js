@@ -9,21 +9,19 @@ import {Routes, BrowserRouter, Route} from 'react-router-dom';
 
 function App() {
   return (
-   
+   <BrowserRouter>
     <div className="App">
       <Header/>
       <Navigation/>
       <div className='content'>
-         <BrowserRouter>
         <Routes>
           <Route path='/main' element={<Main />} /> 
           <Route path='/dialogs' element={<Dialogs />} />
         </Routes>
-        </BrowserRouter>
       </div>
       <Footer/>
     </div>
-    
+     </BrowserRouter>
   );
 }
 
