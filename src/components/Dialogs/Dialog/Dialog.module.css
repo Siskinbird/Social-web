@@ -1,0 +1,17 @@
+.dialog a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    transition: all ease-in-out .4s;
+    -webkit-transition: all ease-in-out .4s;
+    -moz-transition: all ease-in-out .4s;
+    -ms-transition: all ease-in-out .4s;
+    -o-transition: all ease-in-out .4s;
+}
+a:hover {
+    color: gold;
+}
+
+.active {
+    color: gold;
+}
