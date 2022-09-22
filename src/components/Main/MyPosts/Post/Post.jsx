@@ -10,7 +10,7 @@ function Post(props) {
                 {props.message}
             </div>
             <div>
-                <span>Like</span>
+                <span>Like: {props.likesCount}</span>
             </div>
         </section>
     )
