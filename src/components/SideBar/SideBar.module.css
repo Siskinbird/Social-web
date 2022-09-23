@@ -13,7 +13,16 @@
     -ms-transition: all ease-in-out .4s;
     -o-transition: all ease-in-out .4s;
 }
+.friends {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 6px;
+}
 
+h4 {
+    text-align: center;
+}
 
 a.active{
     color: gold;

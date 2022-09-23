@@ -12,8 +12,9 @@ function SideBar(props) {
   return(
     <section className={style.sideBar}>
       <Navigation />
-      <div className="friends">
-        <h4>Friends</h4>
+      <h4>Friends</h4>
+      <div className={style.friends}>
+        
         {friendsList}
       </div>
     </section>    
