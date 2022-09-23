@@ -6,11 +6,11 @@ import Message from './Message/Message';
 
 function Dialogs(props) {
     
-    let dialogsElements = props.state.dialogs
-    .map(element => (<Dialog name={element.name} id={element.id} />))
+    let dialogsElements = props.state.persons
+    .map((element, index) => (<Dialog key={index} name={element.name} id={element.id} avatar={element.avatar}/>))
     
     let messagesElements = props.state.messages
-    .map(element => (<Message message={element.message}/>))
+    .map((element, index) => (<Message message={element.message} key={index}/>))
 
     return (
         <section className={style.dialogs}>
@@ -20,7 +20,6 @@ function Dialogs(props) {
             <div className={style.messages}>
                 { messagesElements }
             </div>
-            <h2>Dialogs</h2>
         </section>
     )
 }

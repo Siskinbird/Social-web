@@ -5,7 +5,7 @@ import Post from "./Post/Post";
 
 function MyPosts(props) {
 
-    let postsMessages = props.posts.map(post => (<Post message={post.message} likesCount={post.likesCount}/>))
+    let postsMessages = props.posts.map((post, index) => (<Post message={post.message} likesCount={post.likesCount} key={index}/>))
 
     return(
         <section className="posts">
