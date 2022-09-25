@@ -54,4 +54,10 @@ export function addPost(postText) {
     rerenderEntireTree(state);
 }
 
+/* export function addLike() {
+    state.mainPage.posts.likesCount = state.mainPage.posts.likesCount++;
+    rerenderEntireTree(state);
+} */
+
+
 export default state;

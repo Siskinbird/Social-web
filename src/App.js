@@ -16,7 +16,7 @@ function App(props) {
       <SideBar state={props.state.sideBar}/>
       <div className='content'>
         <Routes>
-          <Route path='/main' element={<Main state={props.state.mainPage}/>} /> 
+          <Route path='/main' element={<Main state={props.state.mainPage} addPost={props.addPost}/>} /> 
           <Route path='/dialogs' element={<Dialogs state={props.state.dialogsPage} messages={props.state.dialogsPage}/>} />
         </Routes>
       </div>

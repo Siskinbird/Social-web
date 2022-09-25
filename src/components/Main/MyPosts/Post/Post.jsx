@@ -2,6 +2,7 @@ import React from "react";
 import style from "./Post.module.css";
 
 
+
 function Post(props) {
     return(
         <section className="post">
@@ -10,7 +11,7 @@ function Post(props) {
                 {props.message}
             </div>
             <div>
-                <span>Like: {props.likesCount}</span>
+                <button>Like: {props.likesCount}</button>
             </div>
         </section>
     )
