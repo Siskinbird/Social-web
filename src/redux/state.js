@@ -22,7 +22,8 @@ let state = {
             {id: 4, message: 'Russia come', likesCount: 44},
             {id: 5, message: 'Run', likesCount: 98},
             {id: 6, message: 'Away', likesCount: 113} 
-        ]
+        ],
+        newPostText: 'new post from state'
     },
     dialogsPage: {
         persons: [
@@ -44,13 +45,19 @@ let state = {
     } 
 }
 
-export function addPost(postText) {
+export function addPost() {
     let newPost = {
         id: 7,
-        message: postText,
+        message: state.mainPage.newPostText,
         likesCount: 0
     };
     state.mainPage.posts.push(newPost);
+    state.mainPage.newPostText = '';
+    rerenderEntireTree(state);
+}
+
+export function updateNewPostText(updateText) {
+    state.mainPage.newPostText = updateText;
     rerenderEntireTree(state);
 }
 

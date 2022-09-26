@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header/Header';
-import Navigation from './components/SideBar/Navigation/Navigation';
+/* import Navigation from './components/SideBar/Navigation/Navigation'; */
 import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
 import Dialogs from './components/Dialogs/Dialogs';
@@ -16,7 +16,7 @@ function App(props) {
       <SideBar state={props.state.sideBar}/>
       <div className='content'>
         <Routes>
-          <Route path='/main' element={<Main state={props.state.mainPage} addPost={props.addPost}/>} /> 
+          <Route path='/main' element={<Main mainPage={props.state.mainPage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>} /> 
           <Route path='/dialogs' element={<Dialogs state={props.state.dialogsPage} messages={props.state.dialogsPage}/>} />
         </Routes>
       </div>
