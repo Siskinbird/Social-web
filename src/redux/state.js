@@ -1,3 +1,6 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_POST = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MAESSAGE_BODY = 'UPDATE-NEW-MAESSAGE-BODY'
 
 let store = {
     _state: {
@@ -41,7 +44,8 @@ let store = {
                 {id: 4, message: 'Go off you contry'},
                 {id: 5, message: 'Stay away'},
                 {id: 6, message: 'Run'} 
-            ]
+            ],
+            newMessageBody: ''
         } 
     },
     _callSubscriber() {
@@ -71,7 +75,7 @@ let store = {
     }, */
 /* ---------------------------------------------------------------------- */
     dispatch(action) {
-        if(action.type === 'ADD-POST') {
+        if(action.type === ADD_POST) {
             let newPost = {
                 id: 7,
                 message: this._state.mainPage.newPostText,
@@ -80,15 +84,24 @@ let store = {
             this._state.mainPage.posts.push(newPost);
             this._state.mainPage.newPostText = '';
             this._callSubscriber(this._state);   
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        } else if (action.type === UPDATE_POST) {
             this._state.mainPage.newPostText = action.updateText;
+            this._callSubscriber(this._state);
+        } else if (action.type === UPDATE_NEW_MAESSAGE_BODY) {
+            this._state.dialogsPage.newMessageBody = action.newMessage;
             this._callSubscriber(this._state);
         }
     }
 }
 
+export let addPostActionCreator = () => ({ type: ADD_POST })
+export let onPostChangeActionCreator = (text) => ({ type: UPDATE_POST, updateText: text })
+
+
 window.state = store;
 export default store;
+/* export default onPostChangeActionCreator;
+export default addPostActionCreator; */
 
 /* let _callSubscriber = () => {
     console.log('State is changed')
