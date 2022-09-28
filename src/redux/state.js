@@ -44,13 +44,18 @@ let store = {
             ]
         } 
     },
-    getState() {
-        return this._state;
-    },
     _callSubscriber() {
         console.log('State is changed')
     },
-    addPost() {       
+
+    getState() {
+        return this._state;
+    },
+    subscribe(observer) {
+        this._callSubscriber = observer;
+    },
+/* --------------------------------------------------------------------- */
+/*     addPost() {       
         let newPost = {
             id: 7,
             message: this._state.mainPage.newPostText,
@@ -63,9 +68,22 @@ let store = {
     updateNewPostText(updateText) {
         this._state.mainPage.newPostText = updateText;
         this._callSubscriber(this._state);
-    },
-    subscribe(observer) {
-        this._callSubscriber = observer;
+    }, */
+/* ---------------------------------------------------------------------- */
+    dispatch(action) {
+        if(action.type === 'ADD-POST') {
+            let newPost = {
+                id: 7,
+                message: this._state.mainPage.newPostText,
+            likesCount: 0
+            };
+            this._state.mainPage.posts.push(newPost);
+            this._state.mainPage.newPostText = '';
+            this._callSubscriber(this._state);   
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.mainPage.newPostText = action.updateText;
+            this._callSubscriber(this._state);
+        }
     }
 }
 
