@@ -44,32 +44,35 @@ let store = {
             ]
         } 
     },
-    rerenderEntireTree() {
+    getState() {
+        return this._state;
+    },
+    _callSubscriber() {
         console.log('State is changed')
     },
     addPost() {       
         let newPost = {
             id: 7,
-            message: state.mainPage.newPostText,
+            message: this._state.mainPage.newPostText,
          likesCount: 0
         };
-        state.mainPage.posts.push(newPost);
-        state.mainPage.newPostText = '';
-        rerenderEntireTree(state);
+        this._state.mainPage.posts.push(newPost);
+        this._state.mainPage.newPostText = '';
+        this._callSubscriber(this._state);
     },
     updateNewPostText(updateText) {
-        state.mainPage.newPostText = updateText;
-        rerenderEntireTree(state);
+        this._state.mainPage.newPostText = updateText;
+        this._callSubscriber(this._state);
     },
     subscribe(observer) {
-        rerenderEntireTree = observer;
+        this._callSubscriber = observer;
     }
 }
 
-window.state = state;
+window.state = store;
 export default store;
 
-/* let rerenderEntireTree = () => {
+/* let _callSubscriber = () => {
     console.log('State is changed')
 }
 
@@ -126,19 +129,19 @@ let state = {
     };
     state.mainPage.posts.push(newPost);
     state.mainPage.newPostText = '';
-    rerenderEntireTree(state);
+    _callSubscriber(state);
 }
 
 export function updateNewPostText(updateText) {
     state.mainPage.newPostText = updateText;
-    rerenderEntireTree(state);
+    _callSubscriber(state);
 }
 
 export function subscribe(observer) {
-    rerenderEntireTree = observer;
+    _callSubscriber = observer;
 } */
 /* export function addLike() {
     state.mainPage.posts.likesCount = state.mainPage.posts.likesCount++;
-    rerenderEntireTree(state);
+    _callSubscriber(state);
 } */
 
