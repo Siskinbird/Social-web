@@ -1,7 +1,6 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_POST = 'UPDATE-NEW-POST-TEXT';
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
-const SEND_MESSAGE = 'SEND-MESSAGE';
+import dialogsReducer from "./dialogsReducer";
+import mainReducer from "./mainReducer";
+import sideBarReducer from "./sideBarReducer";
 
 let store = {
     _state: {
@@ -76,7 +75,13 @@ let store = {
     }, */
 /* ---------------------------------------------------------------------- */
     dispatch(action) {
-        if(action.type === ADD_POST) {
+
+        this._state.mainPage = mainReducer(this._state.mainPage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sideBar = sideBarReducer( this._state.sideBar, action);
+        this._callSubscriber(this._state);
+
+/*         if(action.type === ADD_POST) {
             let newPost = {
                 id: 7,
                 message: this._state.mainPage.newPostText,
@@ -100,14 +105,12 @@ let store = {
             this._state.dialogsPage.messages.push(newMessage);
             this._state.dialogsPage.newMessageBody = '';
             this._callSubscriber(this._state);
-        }
+        } */
     }
 }
 
-export const addPostActionCreator = () => ({ type: ADD_POST })
-export const onPostChangeActionCreator = (text) => ({ type: UPDATE_POST, updateText: text })
-export const addNewMessageActionCreator = (newMessage) => ({type: UPDATE_NEW_MESSAGE_BODY, body: newMessage})
-export const sendMessageActionCreator = () => ({ type: SEND_MESSAGE })
+
+
 
 
 window.state = store;
