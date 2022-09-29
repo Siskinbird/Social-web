@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import Dialogs from './components/Dialogs/Dialogs';
 import {Routes, BrowserRouter, Route} from 'react-router-dom';
 import SideBar from './components/SideBar/SideBar';
+/* import store from './redux/state'; */
 
 
 function App(props) {
@@ -17,7 +18,7 @@ function App(props) {
       <div className='content'>
         <Routes>
           <Route path='/main' element={<Main mainPage={props.state.mainPage} dispatch={props.dispatch}/>}/> 
-          <Route path='/dialogs' element={<Dialogs state={props.state.dialogsPage} messages={props.state.dialogsPage}/>} />
+          <Route path='/dialogs' element={<Dialogs store={props.store}/>} />
         </Routes>
       </div>
       <Footer/>

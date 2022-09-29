@@ -1,6 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_POST = 'UPDATE-NEW-POST-TEXT';
-const UPDATE_NEW_MAESSAGE_BODY = 'UPDATE-NEW-MAESSAGE-BODY'
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let store = {
     _state: {
@@ -79,7 +80,7 @@ let store = {
             let newPost = {
                 id: 7,
                 message: this._state.mainPage.newPostText,
-            likesCount: 0
+                likesCount: 0
             };
             this._state.mainPage.posts.push(newPost);
             this._state.mainPage.newPostText = '';
@@ -87,15 +88,26 @@ let store = {
         } else if (action.type === UPDATE_POST) {
             this._state.mainPage.newPostText = action.updateText;
             this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MAESSAGE_BODY) {
-            this._state.dialogsPage.newMessageBody = action.newMessage;
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsPage.newMessageBody = action.body;
+            this._callSubscriber(this._state);
+        } else if (action.type === SEND_MESSAGE) {
+            let body = this._state.dialogsPage.newMessageBody;
+            let newMessage = {
+                id: 8,
+                message: body
+            };
+            this._state.dialogsPage.messages.push(newMessage);
+            this._state.dialogsPage.newMessageBody = '';
             this._callSubscriber(this._state);
         }
     }
 }
 
-export let addPostActionCreator = () => ({ type: ADD_POST })
-export let onPostChangeActionCreator = (text) => ({ type: UPDATE_POST, updateText: text })
+export const addPostActionCreator = () => ({ type: ADD_POST })
+export const onPostChangeActionCreator = (text) => ({ type: UPDATE_POST, updateText: text })
+export const addNewMessageActionCreator = (newMessage) => ({type: UPDATE_NEW_MESSAGE_BODY, body: newMessage})
+export const sendMessageActionCreator = () => ({ type: SEND_MESSAGE })
 
 
 window.state = store;
