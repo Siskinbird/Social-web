@@ -7,12 +7,13 @@ function MyPosts(props) {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.addPost();
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.dispatch(onPostChangeActionCreator(text))
+        props.updateNewPostText(text);
+        //props.dispatch(onPostChangeActionCreator(text))
     }
 
     let postsMessages = props.posts.map((post, index) => (<Post message={post.message} likesCount={post.likesCount} key={index}/>))
