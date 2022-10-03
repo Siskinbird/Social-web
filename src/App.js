@@ -1,11 +1,10 @@
 import './App.css';
 import Header from './components/Header/Header';
-/* import Navigation from './components/SideBar/Navigation/Navigation'; */
 import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
-import Dialogs from './components/Dialogs/Dialogs';
 import {Routes, BrowserRouter, Route} from 'react-router-dom';
 import SideBar from './components/SideBar/SideBar';
+import DialogsContainer from "./components/Dialogs/Dialog/DialogsContainer";
 /* import store from './redux/state'; */
 
 
@@ -17,8 +16,8 @@ function App(props) {
       <SideBar state={props.state.sideBar}/>
       <div className='content'>
         <Routes>
-          <Route path='/main' element={<Main mainPage={props.state.mainPage} dispatch={props.dispatch}/>}/> 
-          <Route path='/dialogs' element={<Dialogs store={props.store}/>} />
+          <Route path='/main' element={<Main store={props.store}/>}/>
+          <Route path='/dialogs' element={<DialogsContainer store={props.store}/>} />
         </Routes>
       </div>
       <Footer/>

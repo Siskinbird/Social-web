@@ -3,18 +3,22 @@ import {addPostActionCreator, onPostChangeActionCreator} from "../../../../redux
 import MyPosts from "../MyPosts";
 
 function MyPostsContainer(props) {
-    let newPostElement = React.createRef();
+    let state = props.store.getState();
 
     let addPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.store.dispatch(addPostActionCreator());
     }
 
     let onPostChange = (text) => {
-        props.dispatch(onPostChangeActionCreator(text))
+        props.store.dispatch(onPostChangeActionCreator(text))
     }
 
     return(
-        <MyPosts updateNewPostText={ onPostChange } addPost={addPost}/>
-    )
-}
+        <MyPosts
+            updateNewPostText={ onPostChange }
+            addPost={addPost}
+            posts={state.mainPage.posts}
+            newPostText={state.mainPage.newPostText}/>
+        )
+    }
 export default MyPostsContainer;

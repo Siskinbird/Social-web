@@ -6,7 +6,7 @@ function Dialog(props) {
     return(
         <div className={style.dialog}>
             <div className={style.display}>
-                <img src={props.avatar} />
+                <img alt="Image" src={props.avatar} />
                 <NavLink to={'/dialogs/' + props.id}>
                     <p>{props.name}</p>
                 </NavLink>
