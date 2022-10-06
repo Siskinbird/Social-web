@@ -3,10 +3,10 @@ import style from './Dialog.module.css';
 import {NavLink} from "react-router-dom";
 
 function Dialog(props) {
-    return(
+    return (
         <div className={style.dialog}>
             <div className={style.display}>
-                <img alt="Image" src={props.avatar} />
+                <img alt="Image" src={props.avatar}/>
                 <NavLink to={'/dialogs/' + props.id}>
                     <p>{props.name}</p>
                 </NavLink>

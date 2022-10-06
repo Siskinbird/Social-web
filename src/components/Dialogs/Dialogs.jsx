@@ -2,18 +2,18 @@ import React from "react";
 import style from './Dialogs.module.css';
 import Dialog from './Dialog/Dialog';
 import Message from './Message/Message';
-import { sendMessageActionCreator, addNewMessageActionCreator} from '../../redux/dialogsReducer'
+
 
 
 function Dialogs(props) {
 
     let state = props.dialogsPage;
-    
+
     let dialogsElements = state.persons
-    .map((element, index) => (<Dialog key={index} name={element.name} id={element.id} avatar={element.avatar}/>))
-    
+        .map((element, index) => (<Dialog key={index} name={element.name} id={element.id} avatar={element.avatar}/>))
+
     let messagesElements = state.messages
-    .map((element, index) => (<Message message={element.message} key={index}/>))
+        .map((element, index) => (<Message message={element.message} key={index}/>))
 
     let newMessageBody = state.newMessageBody;
 
@@ -28,17 +28,18 @@ function Dialogs(props) {
     return (
         <section className={style.dialogs}>
             <div className={style.dialogs_items}>
-                { dialogsElements }
+                {dialogsElements}
             </div>
             <div className={style.messages}>
-                <div>{ messagesElements }</div>
+                <div>{messagesElements}</div>
                 <div>
                     <div><textarea value={newMessageBody}
-                        onChange={onNewMessageChange}
-                        placeholder="Enter you message"></textarea></div>
-                    <div><button onClick={onSendMessageClick}>Send</button></div>   
+                                   onChange={onNewMessageChange}
+                                   placeholder="Enter you message"></textarea></div>
+                    <div>
+                        <button onClick={onSendMessageClick}>Send</button>
+                    </div>
                 </div>
-
             </div>
         </section>
     )

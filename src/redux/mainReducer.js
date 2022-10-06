@@ -8,31 +8,38 @@ let initialState = {
         {id: 3, message: 'In this fucking world war', likesCount: 11},
         {id: 4, message: 'Russia come', likesCount: 44},
         {id: 5, message: 'Run', likesCount: 98},
-        {id: 6, message: 'Away', likesCount: 113} 
+        {id: 6, message: 'Away', likesCount: 113}
     ],
     newPostText: 'new post from state'
 }
 
 const mainReducer = (state = initialState, action) => {
+
     switch (action.type) {
-        case ADD_POST:
+        case ADD_POST: {
             let newPost = {
                 id: 7,
                 message: state.newPostText,
                 likesCount: 0
             };
-            state.posts.push(newPost);
-            state.newPostText = '';             
-            return state;
-        case UPDATE_POST:
-            state.newPostText = action.updateText;
-            return state;
+            let stateCopy = {...state}
+            stateCopy.posts = {...state.posts};
+            debugger;
+            stateCopy.posts.push(newPost);
+            stateCopy.newPostText = '';
+            return stateCopy;
+        }
+        case UPDATE_POST: {
+            let stateCopy = {...state};
+            stateCopy.newPostText = action.newText;
+            return stateCopy;
+        }
         default:
             return state;
     }
 }
- 
-export const addPostActionCreator = () => ({ type: ADD_POST })
-export const onPostChangeActionCreator = (text) => ({ type: UPDATE_POST, updateText: text })
+
+export const addPostActionCreator = () => ({type: ADD_POST})
+export const onPostChangeActionCreator = (text) => ({type: UPDATE_POST, newText: text})
 
 export default mainReducer;

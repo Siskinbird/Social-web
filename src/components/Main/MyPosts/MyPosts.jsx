@@ -11,7 +11,7 @@ function MyPosts(props) {
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+        props.newPostText(text);
     }
 
     let postsMessages = props.posts.map((post, index) => (<Post message={post.message} likesCount={post.likesCount} key={index}/>))
@@ -21,7 +21,7 @@ function MyPosts(props) {
             <div>
                 My posts
                 <div className={style.posts_area}>
-                    <textarea ref={newPostElement} onChange={onPostChange} value={props.newPostText}></textarea>
+                    <textarea ref={newPostElement} onChange={onPostChange} value={props.newText}></textarea>
                     <button onClick={onAddPost}>New post</button>
                     <button>Remove</button>
                 </div>
