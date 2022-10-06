@@ -21,7 +21,7 @@ function MyPosts(props) {
             <div>
                 My posts
                 <div className={style.posts_area}>
-                    <textarea ref={newPostElement} onChange={onPostChange} value={props.newText}></textarea>
+                    <textarea onChange={onPostChange} ref={newPostElement} value={props.newText}></textarea>
                     <button onClick={onAddPost}>New post</button>
                     <button>Remove</button>
                 </div>
