@@ -15,6 +15,7 @@ function App(props) {
         <BrowserRouter>
             <div className="App">
                 <Header/>
+                <SideBar/>
                 <div className='content'>
                     <Routes>
                         <Route path='/main'

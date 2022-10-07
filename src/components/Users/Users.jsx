@@ -10,10 +10,8 @@ function Users(props) {
                 .then(response => {
                     props.setUsers(response.data.items);
                 });
-
         }
     }
-
 
     return (
         <div className={style.users}>

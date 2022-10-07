@@ -13,6 +13,7 @@ function Navigation(props) {
         <ul>
           <li><NavLink to='/main' className={activeLink}>Profile</NavLink></li>
           <li><NavLink to='/dialogs' className={activeLink}>Dialogs</NavLink></li>
+          <li><NavLink to='/users' className={activeLink}>Users</NavLink></li>
           <li><NavLink to='/news' className={activeLink}>News</NavLink></li>
           <li><NavLink to='/contacts' className={activeLink}>Contacts</NavLink></li>
         </ul>
