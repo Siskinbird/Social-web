@@ -3,3 +3,16 @@
     height: auto;
     padding: 8px;
 }
+
+.selected {
+    color: gold;
+    font-weight: bold;
+}
+.unselected {
+    color: white;
+    font-weight: normal;
+}
+span {
+    cursor: pointer;
+    margin-right: 8px;
+}
