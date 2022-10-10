@@ -12,6 +12,13 @@
     color: white;
     font-weight: normal;
 }
+
+.pagination {
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 span {
     cursor: pointer;
     margin-right: 8px;

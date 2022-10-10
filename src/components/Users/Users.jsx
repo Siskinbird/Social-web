@@ -8,11 +8,12 @@ class Users extends React.Component {
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(response => {
                 this.props.setUsers(response.data.items);
+                this.props.setTotalUsersCount(response.data.totalCount)
             });
     }
     onPageChanged = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page${pageNumber}&count=${this.props.pageSize}`)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
             .then(response => {
                 this.props.setUsers(response.data.items);
             });
@@ -26,12 +27,6 @@ class Users extends React.Component {
         }
         return (
             <div className={style.users}>
-                <div>
-                    {pages.map(page => {
-                       return <span key={page} className={this.props.currentPage === page ? style.selected : style.unselected}
-                       onClick={ (event) => this.onPageChanged(page)}>{page}</span>
-                    })}
-                </div>
                 <div>Users component</div>
                 {
                     this.props.users.map(user => <div key={user.id}>
@@ -61,6 +56,12 @@ class Users extends React.Component {
             </span>
                     </div>)
                 }
+                <div className={style.pagination}>
+                    {pages.map(page => {
+                        return <span key={page} className={this.props.currentPage === page ? style.selected : style.unselected}
+                                     onClick={ (event) => this.onPageChanged(page)}>{page}</span>
+                    })}
+                </div>
             </div>
         )
     }
