@@ -11,7 +11,7 @@ function Navigation(props) {
   return(  
     <nav className={style.nav}>
         <ul>
-          <li><NavLink to='/main' className={activeLink}>Profile</NavLink></li>
+          <li><NavLink to='/profile' className={activeLink}>Profile</NavLink></li>
           <li><NavLink to='/dialogs' className={activeLink}>Dialogs</NavLink></li>
           <li><NavLink to='/users' className={activeLink}>Users</NavLink></li>
           <li><NavLink to='/news' className={activeLink}>News</NavLink></li>

@@ -1,14 +1,13 @@
 import './App.css';
 import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import Profile from './components/Profile/Profile.jsx';
 import Footer from './components/Footer/Footer';
 import {Routes, BrowserRouter, Route} from 'react-router-dom';
 import SideBar from './components/SideBar/SideBar';
 import DialogsContainer from "./components/Dialogs/Dialog/DialogsContainer";
-
 import UsersContainer from "./components/Users/UsersContainer";
-/* import store from './redux/state'; */
-//<SideBar state={props.state.sideBar}/>
+import ProfileContainer from "./components/Profile/ProfileContainer";
+
 
 function App(props) {
     return (
@@ -18,11 +17,12 @@ function App(props) {
                 <SideBar/>
                 <div className='content'>
                     <Routes>
-                        <Route path='/main'
-                               element={<Main store={props.store}/>}/>
+                        <Route path='/profile'
+                               element={<ProfileContainer />}/>
                         <Route path='/dialogs'
-                               element={<DialogsContainer store={props.store}/>}/>
-                        <Route path='/users' element={<UsersContainer store={props.store}/>}/>
+                               element={<DialogsContainer />}/>
+                        <Route path='/users'
+                               element={<UsersContainer />}/>
                     </Routes>
                 </div>
                 <Footer/>

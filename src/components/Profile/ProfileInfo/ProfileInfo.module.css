@@ -13,19 +13,11 @@
     align-items: center;
 }
 
-.author__avatar {
+.author__avatar img {
     margin-right: 40px;
     border-radius: 50%;
-    width: 192px;
-    height: 192px;
-    background: url('/src/images/author.jpg');
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
 }
+
 .author__description {
    color: #B7BDC6;
 }
