@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom"
 
 
 function Navigation(props) {
-  const activeLink = ({isActive}) => isActive ? style.active : style.nav;
+  let activeLink = ({isActive}) => isActive ? style.active : style.nav;
   /* let naviLinks = props.links.map(el => (<NavLink to={el.link}>{el.name}</NavLink>)) */
 /* let navLinks = props.state.links
     .map((element, index) => (<Friend key={index} name={element.name} id={element.id} avatar={element.avatar}/>)) */   

@@ -1,6 +1,5 @@
 import './App.css';
 import Header from './components/Header/Header';
-import Profile from './components/Profile/Profile.jsx';
 import Footer from './components/Footer/Footer';
 import {Routes, BrowserRouter, Route} from 'react-router-dom';
 import SideBar from './components/SideBar/SideBar';
@@ -17,8 +16,11 @@ function App(props) {
                 <SideBar/>
                 <div className='content'>
                     <Routes>
-                        <Route path='/profile'
+                        <Route path='/profile/:userId'
                                element={<ProfileContainer />}/>
+                        <Route path='/profile'
+                               element={<ProfileContainer />}>
+                        </Route>
                         <Route path='/dialogs'
                                element={<DialogsContainer />}/>
                         <Route path='/users'
